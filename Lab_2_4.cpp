@@ -38,5 +38,7 @@ int main()
 	b.remove(0);
 	cout << "b = " << b << "\n";
 
+	cout << "Length of b = " << b.length() << '\n';
+
 	return EXIT_SUCCESS;
 }

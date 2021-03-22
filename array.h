@@ -11,12 +11,12 @@ public:
     Array(const Array& other);  // Конструктор копии
     ~Array();   // Деструктор
 
-    Array operator + (const Array& arr);
-    Array operator += (const Array& arr);
-    Array operator + (const int x);
-    Array& operator = (const Array& arr);
-    int& operator [] (int i);
-    int operator [] (int i) const;
+    Array operator+ (const Array& arr);
+    Array operator+= (const Array& arr);
+    Array operator+ (const int x);
+    Array& operator= (const Array& arr);
+    int& operator[] (int i);
+    int operator[] (int i) const;  // TODO: Что даёт const на конце оператора? Будет ли оно работать для not const Array? А наоборот?
 
     // Методы
     // TODO: Чем <Array> отличается от <Array&>? Что лучше использовать?
