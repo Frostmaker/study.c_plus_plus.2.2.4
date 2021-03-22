@@ -1,4 +1,4 @@
-#include "array.h"
+п»ї#include "array.h"
 
 int& Array::operator[](int i) { return values[i]; }
 
@@ -62,7 +62,7 @@ Array Array::operator+(const int x)
 	for (int i{ 0 }; i < n; ++i)
 		new_one[i] = (*this)[i] + x;
 
-	// TODO: Можно ли не создавать новый объект а возвращать <*this>, как в операции "+="?
+	// TODO: РњРѕР¶РЅРѕ Р»Рё РЅРµ СЃРѕР·РґР°РІР°С‚СЊ РЅРѕРІС‹Р№ РѕР±СЉРµРєС‚ Р° РІРѕР·РІСЂР°С‰Р°С‚СЊ <*this>, РєР°Рє РІ РѕРїРµСЂР°С†РёРё "+="?
 	return new_one;
 }
 
@@ -76,7 +76,7 @@ Array& Array::operator=(const Array& arr)
 			(*this)[i] = arr[i];
 	}
 
-	// TODO: Почему возвращается сам объект, а не ссылка на него?
+	// TODO: РџРѕС‡РµРјСѓ РІРѕР·РІСЂР°С‰Р°РµС‚СЃСЏ СЃР°Рј РѕР±СЉРµРєС‚, Р° РЅРµ СЃСЃС‹Р»РєР° РЅР° РЅРµРіРѕ?
 	return *this;
 }
 
