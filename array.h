@@ -6,10 +6,10 @@ private:
     int n;
     int* values;
 public:
-    Array();    //конструктор по умолчанию
-    Array(int _n, int x = 0);   //конструктор с параметрами
-    Array(const Array& other);  //конструктор копии
-    ~Array();   // деструктор
+    Array();    // Конструктор по умолчанию
+    Array(int _n, int x = 0);   // Конструктор с параметрами
+    Array(const Array& other);  // Конструктор копии
+    ~Array();   // Деструктор
 
     Array operator + (const Array& arr);
     Array operator += (const Array& arr);
@@ -18,10 +18,15 @@ public:
     int& operator [] (int i);
     int operator [] (int i) const;
 
-    // методы
+    // Методы
     int length() const;
+    bool find();    // Найти элемент в массиве
+    Array extend(); // Расширить массив
+    Array add();    // Добавление элемента в конец массива
+    Array insert(); // Вставка элемента в заданное место
+    Array remove(); // Удаление элемента с заданным индексом
 
-    // дружественные функции
+    // Дружественные функции
     friend std::ostream& operator<< (std::ostream& out, const Array& arr);
     friend std::istream& operator>> (std::istream& in, Array& arr);
 };
