@@ -19,12 +19,13 @@ public:
     int operator [] (int i) const;
 
     // Методы
+    // TODO: Чем <Array> отличается от <Array&>? Что лучше использовать?
     int length() const;
-    bool find();    // Найти элемент в массиве
-    Array extend(); // Расширить массив
-    Array add();    // Добавление элемента в конец массива
-    Array insert(); // Вставка элемента в заданное место
-    Array remove(); // Удаление элемента с заданным индексом
+    bool find(int x);    // Найти элемент в массиве
+    Array& extend(int _n); // Расширить массив
+    Array& add(int x);    // Добавление элемента в конец массива
+    Array& insert(int x, int pos); // Вставка элемента в заданное место
+    Array& remove(int pos); // Удаление элемента с заданным индексом
 
     // Дружественные функции
     friend std::ostream& operator<< (std::ostream& out, const Array& arr);

@@ -6,6 +6,84 @@ int Array::operator[](int i) const { return values[i]; }
 
 int Array::length() const { return n; }
 
+bool Array::find(int x)
+{
+	for (int i{ 0 }; i < n; ++i) {
+		if ((*this)[i] == x)
+			return true;
+	}
+
+	return false;
+}
+
+Array& Array::extend(int _n)
+{
+	if (n < _n) {
+		int* _values = new int[_n];
+		int i{ 0 };
+		for (i; i < n; ++i)
+			_values[i] = this->values[i];
+		for (i; i < _n; ++i)
+			_values[i] = 0;
+		delete[] values;
+		values = _values;
+		n = _n;
+	}
+	return *this;
+}
+
+Array& Array::add(int x)
+{
+	int _n = n + 1;
+	int* _values = new int[_n];
+	for (int i{ 0 }; i < n; ++i)
+		_values[i] = values[i];
+	_values[n] = x;
+	delete[] values;
+	values = _values;
+	n = _n;
+
+	return *this;
+}
+
+Array& Array::insert(int x, int pos)
+{
+	int _n = n + 1;
+	int* _values = new int[_n];
+	
+	for (int i{ 0 }; i < pos; ++i)
+		_values[i] = values[i];
+
+	_values[pos] = x;
+
+	for (int i{ pos + 1 }; i < _n; ++i)
+		_values[i] = values[i - 1];
+
+	delete[] values;
+	values = _values;
+	n = _n;
+
+	return *this;
+}
+
+Array& Array::remove(int pos)
+{
+	int _n = n - 1;
+	int* _values = new int[_n];
+
+	for (int i{ 0 }; i < pos; ++i)
+		_values[i] = values[i];
+
+	for (int i{ pos }; i < _n; ++i)
+		_values[i] = values[i + 1];
+
+	delete[] values;
+	values = _values;
+	n = _n;
+
+	return *this;
+}
+
 Array::Array()
 {
 	n = 1;
