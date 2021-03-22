@@ -8,6 +8,7 @@ private:
 public:
     Array();    // Конструктор по умолчанию
     Array(int _n, int x = 0);   // Конструктор с параметрами
+    Array(int _n, int* _values);
     Array(const Array& other);  // Конструктор копии
     ~Array();   // Деструктор
 
