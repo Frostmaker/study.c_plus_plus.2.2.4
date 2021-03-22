@@ -25,6 +25,7 @@ int main()
 	cin >> e;
 	cout << "e = " << e << '\n';
 
+
 	b.extend(4);
 	cout << "b = " << b << "\n";
 
