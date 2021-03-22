@@ -100,6 +100,15 @@ Array::Array(int _n, int x)
 	}
 }
 
+Array::Array(int _n, int* _values)
+{
+	n = _n;
+	values = new int[n];
+	for (int i = 0; i < n; ++i) {
+		values[i] = _values[i];
+	}
+}
+
 Array::Array(const Array& other)
 {
 	n = other.n;
