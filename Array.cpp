@@ -1,4 +1,5 @@
 ﻿#include "array.h"
+#include <iostream>
 
 int& Array::operator[](int i) { return values[i]; }
 
@@ -169,9 +170,14 @@ std::ostream& operator<<(std::ostream& out, const Array& arr)
 
 std::istream& operator>>(std::istream& in, Array& arr)
 {
+	std::cout << "Create new array:\nEnter number of elements: ";
 	in >> arr.n;
-	for (int i{ 0 }; i < arr.n; ++i)
-		in >> arr[i];
+	delete[] arr.values;
+	arr.values = new int[arr.n];
+	for (int i = 0; i < arr.n; ++i) {
+		std::cout << (i + 1) << " elem = ";
+		in >> arr.values[i];
+	}
 
 	return in;
 }
