@@ -21,6 +21,9 @@ int main()
 	d = b;  // Перегрузка "="
 	cout << "d = " << d << '\n';
 
+	Array e;
+	cin >> e;
+	cout << "e = " << e << '\n';
 
 	b.extend(4);
 	cout << "b = " << b << "\n";
