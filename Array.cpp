@@ -79,3 +79,21 @@ Array& Array::operator=(const Array& arr)
 	// TODO: Почему возвращается сам объект, а не ссылка на него?
 	return *this;
 }
+
+std::ostream& operator<<(std::ostream& out, const Array& arr)
+{
+	out << "[";
+	for (int i{ 0 }; i < (arr.n - 1); ++i)
+		out << arr[i] << ", ";
+	out << arr[arr.n - 1] << "]";
+	return out;
+}
+
+std::istream& operator>>(std::istream& in, Array& arr)
+{
+	in >> arr.n;
+	for (int i{ 0 }; i < arr.n; ++i)
+		in >> arr[i];
+
+	return in;
+}

@@ -1,8 +1,12 @@
 #include <iostream>
+#include "array.h"
 
 using namespace std;
 
 int main()
 {
-	cout << "Hello World!\n";
+	Array a;
+	Array b(10, 5);
+	cout << "a = " << a << "\n" << "b = " << b << '\n';
+	return EXIT_SUCCESS;
 }
